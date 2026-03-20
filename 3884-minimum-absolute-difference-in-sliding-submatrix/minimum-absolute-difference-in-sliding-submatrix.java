@@ -15,7 +15,7 @@ class Solution {
         // }
         if(li.size() == 1) return 0;
         Collections.sort(li);
-        System.out.println(li);
+        // System.out.println(li);
         int min = Integer.MAX_VALUE;
         for(int x=1;x<li.size();x++){
             min = Math.min(min,Math.abs(li.get(x)-li.get(x-1)));
