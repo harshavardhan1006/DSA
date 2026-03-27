@@ -10,10 +10,13 @@ class Solution {
         for(int i=0;i<numCourses;i++){
             if(indegree[i] == 0) q.add(i);
         }
-        List<Integer> list = new ArrayList<>();
+        int count = 0;
+        int idx = 0;
+        int[] res = new int[numCourses];
         while(!q.isEmpty()){
             int node = q.poll();
-            list.add(node);
+            count++;
+            res[idx++] = node;
             if(map.get(node) == null) continue;
             for(int i:map.get(node)){
                 indegree[i]--;
@@ -22,10 +25,7 @@ class Solution {
                 }
             }
         }
-        if(list.size() != numCourses) return new int[]{};
-        int[] res = new int[numCourses];
-        for(int i=0;i<numCourses;i++) res[i] = list.get(i);
-        // System.out.println(map);
+        if(count != numCourses) return new int[]{};
         return res;
     }
 }
