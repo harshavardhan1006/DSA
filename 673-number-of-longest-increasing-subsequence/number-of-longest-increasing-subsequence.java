@@ -30,6 +30,6 @@ class Solution {
                 res += len[i];
             }
         }
-        return maxi == 1 ? n : res;
+        return res;
     }
 }
